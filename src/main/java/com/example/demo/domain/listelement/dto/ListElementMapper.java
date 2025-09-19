@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ListElementMapper extends AbstractMapper<ListElement, ListElementDTO> {
-    @Mapping(target = "list", source = "listId") // UUID -> List
+    @Mapping(target = "list", source = "listId")
     ListElement fromListElementCreateDTO(@Valid ListElementCreateDTO listElementCreateDTO);
 
     @Mapping(target = "id", source = "list.id")

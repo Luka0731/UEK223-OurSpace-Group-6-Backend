@@ -36,7 +36,7 @@ public class List extends AbstractEntity {
         super(id);
         this.title = title;
         if (listElements != null) {
-            listElements.forEach(this::addElement); // stellt die bidirektionale Konsistenz her
+            listElements.forEach(this::addElement);
         }
     }
 

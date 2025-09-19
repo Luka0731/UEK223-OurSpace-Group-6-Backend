@@ -36,7 +36,7 @@ public class ListElementController {
   @PostMapping()
   @PreAuthorize("hasAuthority('LIST_ELEMENT_CREATE') && @userPermissionEvaluator.exampleEvaluator(authentication.principal.user,#id)") // todo
   public ResponseEntity<ListElementDTO> register(@Valid @RequestBody ListElementCreateDTO listElementCreateDTO) {
-      ListElement listElement = listElementService.create(listElementMapper.fromListElementCreateDTO(listElementCreateDTO));
+      ListElement listElement = listElementService.save(listElementMapper.fromListElementCreateDTO(listElementCreateDTO));
       return new ResponseEntity<>(listElementMapper.toDTO(listElement), HttpStatus.CREATED);
   }
 
